@@ -1,0 +1,51 @@
+{
+  "name": "markov-chains-text",
+  "version": "1.0.0",
+  "description": "Fake text, powered by Markov chains",
+  "jsnext:main": "src/index.js",
+  "main": "dist/markov-chains-text.js",
+  "scripts": {
+    "build": "babel src/index.js -o dist/markov-chains-text.js",
+    "clean": "rimraf dist/*",
+    "lint": "eslint src/",
+    "test": "BABEL_ENV=test babel-tape-runner test/*.spec.js",
+    "preversion": "npm test && npm run lint",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bdchauvette/markov-chains-text.js.git"
+  },
+  "keywords": [
+    "markovify",
+    "markov",
+    "markov chain",
+    "sentence",
+    "text"
+  ],
+  "author": "Ben Chauvette <bdchauvette@gmail.com> (https://github.com/bdchauvette)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bdchauvette/markov-chains-text/issues"
+  },
+  "homepage": "https://github.com/bdchauvette/markov-chains-text#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.6.5",
+    "babel-eslint": "^6.0.2",
+    "babel-plugin-rewire": "^1.0.0-rc-2",
+    "babel-preset-es2015-native-generators": "^6.6.0",
+    "babel-tape-runner": "^2.0.1",
+    "eslint": "^2.4.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-babel": "^3.1.0",
+    "is-equal": "^1.5.1",
+    "jsdoc-to-markdown": "^1.3.3",
+    "rimraf": "^2.5.1",
+    "tape": "^4.5.1"
+  },
+  "dependencies": {
+    "markov-chains": "^1.0.2",
+    "sbd": "^1.0.3"
+  }
+}
