@@ -1,7 +1,7 @@
-import Text from 'markov-chains-text';
+const Text = require('markov-chains-text');
 
 // build the generator
-const fakeAesop = new Text(getFable());
+const fakeAesop = new Text(getFable(), { stateSize: 1 });
 
 // generate a sentence
 const sentence = fakeAesop.makeSentence();
