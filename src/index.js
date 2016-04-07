@@ -44,7 +44,8 @@ export default class Text {
    * @param {string} [text] the text to use as a basis for the model
    * @param {Object} [config] a configuration object
    * @param {Map}    [config.chain] a pre-configured Markov chain to use
-   * @param {number} [config.stateSize=DEFAULT_STATE_SIZE] the state size to use for the model
+   * @param {number} [config.stateSize=DEFAULT_STATE_SIZE] the state size to
+   *   use for the model
    */
   constructor(text, { chain, stateSize = DEFAULT_STATE_SIZE } = {}) {
     const runs = this.generateCorpus(text);
@@ -156,8 +157,10 @@ export default class Text {
    * existing sentences.
    *
    * @param {string[]} words the sentence split into words
-   * @param {number} maxOverlapRatio The max ratio for how much generated sentences are allowed to overlap with existing sentences
-   * @param {number} maxOverlapTotal The max total number of ngrams a generated sentence can overlap with existing ones
+   * @param {number} maxOverlapRatio The max ratio for how much generated
+   *   sentences are allowed to overlap with existing sentences
+   * @param {number} maxOverlapTotal The max total number of ngrams a generated
+   *   sentence can overlap with existing ones
    * @return {boolean} whether the sentence passes the filter
    */
   testSentenceOutput(
@@ -186,13 +189,20 @@ export default class Text {
    *  Attempts `tries` number of times to generate a valid sentence (i.e. ones
    *  that can pass `testSentenceOutput`).
    *
-   *  @param {(string|string[])} [startFrom] The text to begin generating the corpus from
+   *  @param {(string|string[])} [startFrom] The text to begin generating the
+   *    corpus from
    *  @param {Object} [startFrom] The text to begin generating the corpus from
-   *  @param {number} [startFrom.tries=DEFAULT_TRIES] How many times to attempt generating a sentence
-   *  @param {number} [startFrom.maxOverlapRatio] The max ratio for how much generated sentences are allowed to overlap with existing sentences
-   *  @param {number} [startFrom.maxOverlapTotal] The max total number of ngrams a generated sentence can overlap with existing ones
-   *  @param {number} [startFrom.maxChars] The max length (inclusive) limit for that a sentence can be. If specified, generated sentences must be <= `maxLength`
-   *  @return {(string|Error)} the generated sentence, or an error if it is unable to generate an adquate sentence
+   *  @param {number} [startFrom.tries=DEFAULT_TRIES] How many times to attempt
+   *    generating a sentence
+   *  @param {number} [startFrom.maxOverlapRatio] The max ratio for how much
+   *    generated sentences are allowed to overlap with existing sentences
+   *  @param {number} [startFrom.maxOverlapTotal] The max total number of
+   *    ngrams a generated sentence can overlap with existing ones
+   *  @param {number} [startFrom.maxChars] The max length (inclusive) in
+   *    characters for generated sentences. If specified, generated sentences
+   *    contain no more than `maxChars` characters, including whitespace.
+   *  @return {(string|Error)} the generated sentence, or an error if it is
+   *    unable to generate an adquate sentence
    */
   makeSentence(startFrom, opts = {}) {
     let initState;
