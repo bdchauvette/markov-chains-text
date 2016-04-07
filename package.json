@@ -4,6 +4,7 @@
   "description": "Fake text, powered by Markov chains",
   "jsnext:main": "src/index.js",
   "main": "dist/markov-chains-text.js",
+  "tonicExample": "example.js",
   "scripts": {
     "build": "babel src/index.js -o dist/markov-chains-text.js",
     "clean": "rimraf dist/*",
