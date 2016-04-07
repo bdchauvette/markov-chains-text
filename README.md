@@ -33,7 +33,7 @@ const MobyDick = readFileSync(path.join(__dirname, 'moby-dick.txt'));
 // build the generator
 const fakeMobyDick = new Text(MobyDick);
 
-// generate a forecast
+// generate a sentence
 const sentence = fakeMobyDick.makeSentence();
 
 console.log(sentence);
