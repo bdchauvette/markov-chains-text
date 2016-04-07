@@ -1,6 +1,6 @@
 {
   "name": "markov-chains-text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fake text, powered by Markov chains",
   "jsnext:main": "src/index.js",
   "main": "dist/markov-chains-text.js",
